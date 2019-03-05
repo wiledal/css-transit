@@ -19,7 +19,7 @@ function cssTransition(target, time, arg1, arg2, arg3) {
     }
   })
 
-  els[0].offsetWidth // trigger layout
+  els[0].offsetWidth = els[0].offsetWidth // trigger layout
 
   els.forEach((el, i) => {
     el.style.transition = 'all'
