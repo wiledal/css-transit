@@ -20,6 +20,11 @@ It has been used in multiples of large client production applications over sever
 
 ### Usage:
 
+#### Single method for everything
+`css-transit` uses a single method,`cssTransition()`, which does different things based on the supplied arguments.
+
+> See below examples for more detail.
+
 #### Usage examples:
 
 <table>
@@ -181,13 +186,21 @@ cssTransition(
   endProps: Object
 )
 
+// Multiple element staggered transition to end props
+cssTransition(
+  elements: Array,
+  ms: Number,
+  endProps: Object,
+  staggerInterval: Number
+)
+
 // Multiple element staggered transition from starting props, to end props
 cssTransition(
   elements: Array,
   ms: Number,
   fromProps: Object,
   endProps: Object,
-  interval: Number
+  staggerInterval: Number
 )
 ```
 
