@@ -1,5 +1,6 @@
-function setStyles(el, styles) {
+function setStyles(el, styles, isTo) {
   for (var prop in styles) {
+    if (isTo && prop == 'display') continue
     el.style[prop] = styles[prop]
   }
 }
@@ -26,7 +27,7 @@ function cssTransition(target, time, arg1, arg2, arg3) {
     el.style.transitionDuration = time + 'ms'
     el.style.transitionTimingFunction = to.ease ? to.ease : 'ease'
     el.style.transitionDelay = ((to.delay ? to.delay : 0) + (staggerDelay * i)) + 'ms'
-    setStyles(el, to)
+    setStyles(el, to, true)
   })
 
   return new Promise((resolve) => {
@@ -34,6 +35,8 @@ function cssTransition(target, time, arg1, arg2, arg3) {
     transitionTarget.__onTransitionEnd = function(event) {
       if (event.target === transitionTarget) {
         event.target.removeEventListener('transitionend', event.target.__onTransitionEnd)
+        if (to.display) els.forEach((el, i) => { el.style.display = to.display })
+        if (to.clearStyle) els.forEach((el, i) => { el.removeAttribute('style') })
         resolve()
       }
     }
