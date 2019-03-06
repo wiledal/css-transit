@@ -1,6 +1,8 @@
 <h1 style="text-align: center; font-size: 40px;">css-transit 🎉</h1>
 
-`npm install wiledal/css-transit`
+```bash
+npm install wiledal/css-transit
+```
 
 A tiny modern library for fast, smooth, and controllable CSS transitions.
 
@@ -34,8 +36,6 @@ import { cssTransition, ease } from 'css-transit'
 const element = document.querySelector('.element')
 
 cssTransition(element, 500, {
-  transform: 'translate(0, 0) scale(1.5)',
-}, {
   transform: 'translate(200px, 200px) scale(1)',
 })
 ```
@@ -128,13 +128,13 @@ function loop() {
     transform: 'translate(0, 200px) scaleY(.4) scaleX(.2) rotate(180deg)',
     ease: ease.inOutQuart
   }, 100)
-  .then(() => {
-    return cssTransition(elements, 500, {
+  .then(() =>
+    cssTransition(elements, 500, {
       transform: 'rotate(360deg)',
       ease: ease.inOutQuart,
       clearStyle: true
     }, 100)
-  })
+  )
   .then(loop)
 }
 
