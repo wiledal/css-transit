@@ -18,70 +18,15 @@ It has been used in multiples of large client production applications over sever
 
 ### Usage:
 
-#### Methods
-`css-transit` uses a single method for all transitions based on context.  
-```js
-// Element transition to end state
-cssTransition(
-  element: HTMLElement,
-  ms: Number, 
-  endProps: Object
-)
-
-// Element transition from starting state, to end state
-cssTransition(
-  element: HTMLElement,
-  ms: Number, 
-  fromProps: Object,
-  endProps: Object
-)
-
-// Multiple element transition to end state
-cssTransition(
-  elements: Array,
-  ms: Number,
-  endProps: Object
-)
-
-// Multiple element transition from starting state, to end state
-cssTransition(
-  elements: Array,
-  ms: Number,
-  fromProps: Object,
-  endProps: Object
-)
-
-// Multiple element staggered transition from starting state, to end state
-cssTransition(
-  elements: Array,
-  ms: Number,
-  fromProps: Object,
-  endProps: Object,
-  interval: Number
-)
-```
-
-#### Extras
-`css-transit` includes a few special props to ease development.  
-
-- `ease: "<value>"`  
-can be used to provide common easing functions and self-defined `cubic-bezier()`
-- `display: "<value>"`  
-transitions will be applied at the end of transition
-- `delay: 500`  
-delays the start of the transition using standard `transition-delay`
-- `clearStyles: true`  
-clears all styles after transition finished.
-
 #### Usage examples:
 
 <table>
 <tr>
 <td>
-<h5>Basic usage</h5>
 <img src="../assets/single.gif">
 </td>
 <td>
+<h5>Basic usage</h5>
 
 ```js
 import { cssTransition, ease } from 'css-transit'
@@ -100,10 +45,10 @@ cssTransition(element, 500, {
 
 <tr>
 <td>
-<h5>Easing</h5>
 <img src="../assets/ease.gif">
 </td>
 <td>
+<h5>Easing</h5>
 
 ```js
 cssTransition(element, 500, {
@@ -128,10 +73,10 @@ cssTransition(element, 500, {
 
 <tr>
 <td>
-<h5>Showing / Hiding</h5>
 <img src="../assets/showhide.gif">
 </td>
 <td>
+<h5>Showing / Hiding</h5>
 
 ```js
 cssTransition(thing, 500, {
@@ -148,10 +93,10 @@ cssTransition(thing, 500, {
 
 <tr>
 <td>
-<h5>Staggering</h5>
 <img src="../assets/stagger.gif">
 </td>
 <td>
+<h5>Staggering</h5>
 
 ```js
 // first convert the NodeList to an Array
@@ -172,10 +117,10 @@ When transitioning multiple items, the last argument can be used to stagger the 
 
 <tr>
 <td>
-<h5>Callbacks / Promises</h5>
 <img src="../assets/callbacks.gif">
 </td>
 <td>
+<h5>Callbacks / Promises</h5>
 
 ```js
 function loop() {
@@ -202,3 +147,58 @@ When transitioning multiple elements, the `Promise` is resolved when the transit
 </td>
 </tr>
 </table>
+
+#### Methods
+`css-transit` uses a single method for all transitions based on context.  
+```js
+// Element transition to end props
+cssTransition(
+  element: HTMLElement,
+  ms: Number, 
+  endProps: Object
+)
+
+// Element transition from starting props, to end props
+cssTransition(
+  element: HTMLElement,
+  ms: Number, 
+  fromProps: Object,
+  endProps: Object
+)
+
+// Multiple element transition to end props
+cssTransition(
+  elements: Array,
+  ms: Number,
+  endProps: Object
+)
+
+// Multiple element transition from starting props, to end props
+cssTransition(
+  elements: Array,
+  ms: Number,
+  fromProps: Object,
+  endProps: Object
+)
+
+// Multiple element staggered transition from starting props, to end props
+cssTransition(
+  elements: Array,
+  ms: Number,
+  fromProps: Object,
+  endProps: Object,
+  interval: Number
+)
+```
+
+#### Extras
+`css-transit` includes a few special props to ease development.  
+
+- `ease: "<value>"`  
+can be used to provide common easing functions and self-defined `cubic-bezier()`
+- `display: "<value>"`  
+transitions will be applied at the end of transition
+- `delay: 500`  
+delays the start of the transition using standard `transition-delay`
+- `clearStyles: true`  
+clears all styles after transition finished.
