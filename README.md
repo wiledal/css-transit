@@ -1,10 +1,11 @@
-<h1 style="text-align: center; font-size: 40px;">css-transit 🎉</h1>
-
-```bash
-npm install wiledal/css-transit
-```
+<p style="text-align: center; font-size: 40px; font-weight: bold;">css-transit 🎉</p>
 
 A tiny modern library for fast, smooth, and controllable CSS transitions.
+
+### Install
+```bash
+npm install css-transit
+```
 
 ### Why
 Libraries like `GSAP` or `Popmotion` are not needed when dealing with basic CSS transitions, and can significantly reduce performance.  
@@ -17,6 +18,7 @@ It has been used in multiples of large client production applications over sever
 - `gsap`-like usage with `from`, `to`, `ease`, `stagger`, and `delay`
 - Returns a `Promise` which resolves when the transition is finished (through the `ontransitionend` event)
 - Standard `easing` curves included 🎁
+- Smaller than *1kb* gzipped 👌
 
 ### Usage:
 
@@ -151,7 +153,41 @@ When transitioning multiple elements, the `Promise` is resolved when the transit
 
 </td>
 </tr>
+
+<tr>
+<td>
+<img src="../assets/function-props.gif">
+</td>
+<td>
+<h5>Function props</h5>
+
+```js
+cssTransition([...thing], 500, {
+  transform: (el, i) => `translate(0, ${(i+1) * 35}px) rotate(${Math.random() * 360}deg)`,
+  ease: ease.inOutQuart
+}, 100)
+```
+
+`cssTransition 1.2.0+` allows you to use functions that returns a value as props.  
+The first argument is the `element` being changed.  
+The second argument is the `number` of the element in a staggered array.
+
+</td>
+</tr>
 </table>
+
+#### Props
+`css-transit` simply sets and unsets inline styles and support any standard css props that would go into the `HTMLElement.style` property. It also includes a few special props to ease development.  
+
+- `ease: "<value>"`  
+can be used to provide common easing functions and self-defined `cubic-bezier()`
+- `display: "<value>"`  
+transitions will be applied at the end of transition
+- `delay: 500`  
+delays the start of the transition using standard `transition-delay`
+- `clearStyles: true`  
+clears all styles after transition finished.
+
 
 #### Methods
 `css-transit` uses a single method for all transitions based on context.  
@@ -203,15 +239,3 @@ cssTransition(
   staggerInterval: Number
 )
 ```
-
-#### Extras
-`css-transit` includes a few special props to ease development.  
-
-- `ease: "<value>"`  
-can be used to provide common easing functions and self-defined `cubic-bezier()`
-- `display: "<value>"`  
-transitions will be applied at the end of transition
-- `delay: 500`  
-delays the start of the transition using standard `transition-delay`
-- `clearStyles: true`  
-clears all styles after transition finished.
