@@ -1,4 +1,4 @@
-<p style="text-align: center; font-size: 40px; font-weight: bold;">css-transit 🎉</p>
+<h1 style="text-align: center; font-size: 40px; font-weight: bold;">css-transit 🎉</h1>
 
 A tiny modern library for fast, smooth, and controllable CSS transitions.
 
