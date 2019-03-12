@@ -32,7 +32,7 @@ It has been used in multiples of large client production applications over sever
 <table>
 <tr>
 <td>
-<img src="../assets/single.gif">
+<img src="https://raw.githubusercontent.com/wiledal/css-transit/assets/single.gif">
 </td>
 <td>
 <h5>Basic usage</h5>
@@ -52,7 +52,7 @@ cssTransition(element, 500, {
 
 <tr>
 <td>
-<img src="../assets/ease.gif">
+<img src="https://raw.githubusercontent.com/wiledal/css-transit/assets/ease.gif">
 </td>
 <td>
 <h5>Easing</h5>
@@ -80,7 +80,7 @@ cssTransition(element, 500, {
 
 <tr>
 <td>
-<img src="../assets/showhide.gif">
+<img src="https://raw.githubusercontent.com/wiledal/css-transit/assets/showhide.gif">
 </td>
 <td>
 <h5>Showing / Hiding</h5>
@@ -100,7 +100,7 @@ cssTransition(thing, 500, {
 
 <tr>
 <td>
-<img src="../assets/stagger.gif">
+<img src="https://raw.githubusercontent.com/wiledal/css-transit/assets/stagger.gif">
 </td>
 <td>
 <h5>Staggering</h5>
@@ -124,7 +124,7 @@ When transitioning multiple items, the last argument can be used to stagger the 
 
 <tr>
 <td>
-<img src="../assets/callbacks.gif">
+<img src="https://raw.githubusercontent.com/wiledal/css-transit/assets/callbacks.gif">
 </td>
 <td>
 <h5>Callbacks / Promises</h5>
@@ -156,7 +156,7 @@ When transitioning multiple elements, the `Promise` is resolved when the transit
 
 <tr>
 <td>
-<img src="../assets/function-props.gif">
+<img src="https://raw.githubusercontent.com/wiledal/css-transit/assets/function-props.gif">
 </td>
 <td>
 <h5>Function props</h5>
