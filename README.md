@@ -163,7 +163,7 @@ When transitioning multiple elements, the `Promise` is resolved when the transit
 
 ```js
 cssTransition([...thing], 500, {
-  transform: (el, i) => `translate(0, ${(i+1) * 35}px) rotate(${Math.random() * 360}deg)`,
+  transform: (el, i) => `translate(0, ${(i+1) * 40}px)`,
   ease: ease.inOutQuart
 }, 100)
 ```
